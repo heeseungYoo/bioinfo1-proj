@@ -13,17 +13,17 @@ RNA-protein interaction을 찾기 위해서 CLIP-seq을 진행하게 되는데 �
   (-) strand에 cross-linked된 read 주의해서 가져온다. 
 6. 가져온 sequence를 Weblogo에 그려보고 결과를 확인한다. 
 ### result 
-<p>binding position 0에서 Guanine이 우세하게 나온 것을 확인</p> 
-<p>(-2,4) 구간에서 AAGNGG pattern 확인</p> 
+- binding position 0에서 Guanine이 우세하게 나온 것을 확인
+- (-2,4) 구간에서 AAGNGG pattern 확인
 ## LIN28A-bound sequence frequency 구하기 
 FigureS3C의 결과로 binding position의 (-2,4)에 해당하는 sequenc가 binding motif일 확률이 높기 때문에 hexamer로 범위를 좁혀 binding motif를 찾아본다. 
 ### pipeline
 1. 위와 동일한 방식으로 hexamer와 flanking hexamer를 추출한다. 
 2. hexamer와 flanking hexamer의 빈도를 확인 해본다. 
 ### result 
-<p>Hexamer의 경우 AAGNNG, AAGNGN 두 가지 pattern이 Top 10에 rank된 것을 확인</p>
-<p>Flanking hexamer는 Top 10 sequence들 전부 각 position에 대해 complementary하다는 것을 확인</p>
-## Step 3: Figure 2E 그려보기 
+- Hexamer의 경우 AAGNNG, AAGNGN 두 가지 pattern이 Top 10에 rank된 것을 확인
+- Flanking hexamer는 Top 10 sequence들 전부 각 position에 대해 complementary하다는 것을 확인
+## Figure 2E 그려보기 
 Flanking hexamer에서 양 쪽이 complementary하다는 것을 발견했기 때문에 전체 sequence에 대해서 Watson Crick pair 정도를 조사해서 2차 구조 선호도에 대해 조사한다. Hexamer의 분포에서 AAGNHG, AAGNGH 두 pattern으로 나뉘어 있는 것을 확인했으므로 두 Group으로 나누어 조사해본다.
 ### pipeline
 1. AAGNHG에 해당하는 sequence만 모은다. 
